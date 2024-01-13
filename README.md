@@ -1,2 +1,2 @@
 # AstroFormer
-The VisionTransformer for Astronomical Image Processing
+The VisionTransformer for Astronomical Source Separation

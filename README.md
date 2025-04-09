@@ -1,7 +1,5 @@
 # AstroFormer
-Vision Transfomers for Astronomical Image Processing 
-
-Codes will be updated soon ....
+Integrate photometric data and imaging using Vision Transformers to enhance astronomical image processing.
 
 ## Applications
 

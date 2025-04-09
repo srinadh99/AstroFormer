@@ -1,5 +1,5 @@
 # AstroFormer
-Integrate photometric data and imaging using Vision Transformers to enhance astronomical image processing.
+Integrate photometric data and imaging using Cross-Attention Vision Transformers to enhance astronomical image processing.
 
 ## Applications
 

@@ -5,5 +5,5 @@ Codes will be updated soon ....
 
 ## Applications
 
-1. Classificatioon - Star-Galaxy-Quasar Separation
+1. Classification - Star-Galaxy-Quasar Separation
 2. Regression - Photometric Redshift Estimation

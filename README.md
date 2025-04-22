@@ -64,12 +64,12 @@ Table 1 summarizes the key classification metrics: Accuracy, Precision, and Reca
 
 | Experiment | Classification Task | Accuracy (%) | Precision (%) | Recall (%) |
 |---|---|---|---|---|
-| **Ex1:** Compact Train/Test | Star-Galaxy (SG) | 98.1 ± 0.1 | 98.1 ± 0.1 | 98.1 ± 0.1 |
-| _ | Star-Galaxy-Quasar (SGQ) | 93.2 ± 0.1 | 93.3 ± 0.1 | 93.2 ± 0.1 |
-| **Ex2:** Faint+Compact Train/Test | Star-Galaxy (SG) | 97.1 ± 0.1 | 97.1 ± 0.1 | 97.1 ± 0.1 |
-| _ | Star-Galaxy-Quasar (SGQ) | 86.7 ± 0.1 | 86.8 ± 0.1 | 86.7 ± 0.1 |
-| **Ex3:** Compact Train, Faint+Compact Test | Star-Galaxy (SG) | 92.7 ± 0.1 | 93.2 ± 0.1 | 92.7 ± 0.1 |
-| _ | Star-Galaxy-Quasar (SGQ) | 75.2 ± 0.1 | 77.9 ± 0.1 | 75.3 ± 0.1 |
+| **Ex1:** Compact Train/Test | Star-Galaxy | 98.1 ± 0.1 | 98.1 ± 0.1 | 98.1 ± 0.1 |
+| _ | Star-Galaxy-Quasar | 93.2 ± 0.1 | 93.3 ± 0.1 | 93.2 ± 0.1 |
+| **Ex2:** Faint+Compact Train/Test | Star-Galaxy | 97.1 ± 0.1 | 97.1 ± 0.1 | 97.1 ± 0.1 |
+| _ | Star-Galaxy-Quasar | 86.7 ± 0.1 | 86.8 ± 0.1 | 86.7 ± 0.1 |
+| **Ex3:** Compact Train, Faint+Compact Test | Star-Galaxy | 92.7 ± 0.1 | 93.2 ± 0.1 | 92.7 ± 0.1 |
+| _ | Star-Galaxy-Quasar | 75.2 ± 0.1 | 77.9 ± 0.1 | 75.3 ± 0.1 |
 
 ### Confusion Matrices
 

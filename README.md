@@ -81,7 +81,7 @@ To gain deeper insights into the specific classification performance for each cl
 |---|---|---|
 | ![EX1 SG CM](./MargFormer/Trained_Models/EX1_SG_ViTCLSPFCA_CM.png) | ![EX2 SG CM](./MargFormer/Trained_Models/EX2_SG_ViTCLSPFCA_CM.png) | ![EX3 SG CM](./MargFormer/Trained_Models/EX3_SG_ViTCLSPFCA_CM.png) |
 
-*Caption:* Confusion matrices for the binary Star-Galaxy classification task in Experiment 1 (left), Experiment 2 (center), and Experiment 3 (right). High diagonal values indicate correct classifications. Off-diagonal elements show misclassifications between stars and galaxies.
+Confusion matrices for the binary Star-Galaxy classification task in Experiment 1 (left), Experiment 2 (center), and Experiment 3 (right). High diagonal values indicate correct classifications. Off-diagonal elements show misclassifications between stars and galaxies.
 
 **Figure 2: Confusion Matrices for Star-Galaxy-Quasar (SGQ) Classification**
 
@@ -89,5 +89,5 @@ To gain deeper insights into the specific classification performance for each cl
 |---|---|---|
 | ![EX1 SGQ CM](./MargFormer/Trained_Models/EX1_SGQ_ViTCLSPFCA_CM.png) | ![EX2 SGQ CM](./MargFormer/Trained_Models/EX2_SGQ_ViTCLSPFCA_CM.png) | ![EX3 SGQ CM](./MargFormer/Trained_Models/EX3_SGQ_ViTCLSPFCA_CM.png) |
 
-*Caption:* Confusion matrices for the three-class Star-Galaxy-Quasar classification task in Experiment 1 (left), Experiment 2 (center), and Experiment 3 (right). Observe the distribution of classifications across true and predicted classes, particularly the confusion between stars and quasars, and potentially compact galaxies.
+Confusion matrices for the three-class Star-Galaxy-Quasar classification task in Experiment 1 (left), Experiment 2 (center), and Experiment 3 (right). Observe the distribution of classifications across true and predicted classes, particularly the confusion between stars and quasars, and potentially compact galaxies.
 

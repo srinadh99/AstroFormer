@@ -10,7 +10,7 @@ AstroFormer explores modern deep learning architectures, specifically Cross-Atte
 
 AstroFormer provides a flexible framework adaptable to astronomical problems requiring the fusion of tabular (photometric) and visual (imaging) data. Key applications currently explored or planned include:
 
-### 1. Source Classification: Star-Galaxy-Quasar Separation
+### 1. Astronomical Source Classification (Star-Galaxy-Quasar Separation)
 
 *   **Goal:** Accurately distinguish between stars, galaxies, and quasars, a fundamental step in catalog generation and numerous downstream scientific analyses (e.g., cosmology, galaxy evolution studies, Galactic structure mapping).
 *   **Challenge:** Classification becomes particularly difficult for faint and compact objects where traditional morphological or color-based methods often struggle. Point-like quasars can be mistaken for stars, and compact galaxies can resemble point sources at large distances or faint magnitudes.

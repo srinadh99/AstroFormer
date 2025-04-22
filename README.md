@@ -2,9 +2,7 @@
 
 **A Unified Framework for Integrating Photometry and Imaging in Astronomy using Cross-Attention Transformers**
 
-
-AstroFormer explores modern deep learning architectures, specifically Cross-Attention Vision Transformers, to synergistically integrate heterogeneous astronomical data types—photometric parameters and multi-band imaging data. AstroFormer aims to enhance the performance, efficiency, and generalization capabilities of models applied to fundamental astronomical tasks by processing these modalities within a single, unified framework, moving beyond traditional methods that often process data streams separately before late-stage fusion. The core idea is to leverage photometric information (like brightness, colours, and concentration indices) to *guide* the feature extraction process from imaging data. This is achieved by employing a cross-attention mechanism where photometric features act as *queries*, probing the *keys* and *values* derived from image patches. This allows the model to learn intricate cross-modal correlations and focus on visual details most relevant given the photometric context of the source.
-
+AstroFormer explores modern deep learning architectures, specifically Cross-Attention Vision Transformers, to synergistically integrate heterogeneous astronomical data types—photometric parameters and multi-band imaging data. AstroFormer aims to enhance the performance, efficiency, and generalization capabilities of models applied to fundamental astronomical tasks by processing these modalities within a unified framework, moving beyond traditional methods that often process data streams separately before late-stage fusion. The core idea is to leverage photometric information (like brightness, colours, and concentration indices) to *guide* the feature extraction process from imaging data. This is achieved by employing a cross-attention mechanism where photometric features act as *queries*, probing the *keys* and *values* derived from image patches. This allows the model to learn intricate cross-modal correlations and focus on visual details most relevant given the photometric context of the source.
 
 ## Applications
 
@@ -13,8 +11,8 @@ AstroFormer provides a flexible framework adaptable to astronomical problems req
 ### 1. Astronomical Source Classification (Star-Galaxy-Quasar Separation)
 
 *   **Goal:** Accurately distinguish between stars, galaxies, and quasars, a fundamental step in catalog generation and numerous downstream scientific analyses (e.g., cosmology, galaxy evolution studies, Galactic structure mapping).
-*   **Challenge:** Classification becomes particularly difficult for faint and compact objects where traditional morphological or color-based methods often struggle. Point-like quasars can be mistaken for stars, and compact galaxies can resemble point sources at large distances or faint magnitudes.
-*   **AstroFormer Approach (`MargFormer`):** By using photometry to query image features, the model can better disentangle subtle morphological differences or color-space overlaps that might confuse models relying solely on one data type or simple fusion. This is expected to improve accuracy and robustness, especially for the challenging faint/compact regimes critical for upcoming deep surveys.
+*   **Challenge:** Classification becomes particularly difficult for faint and compact objects where traditional morphological or color-based methods often struggle. Point-like quasars can be mistaken for stars, and compact galaxies resemble point sources at large distances or faint magnitudes.
+*   **AstroFormer Approach (`MargFormer`):** By using photometry to query image features, the model can better disentangle subtle morphological differences or color-space overlaps that might confuse models relying solely on one data type or simple fusion. This is expected to improve accuracy and robustness, especially for the challenging faint/compact regimes critical for upcoming deep surveys like LSST and Euclid.
 
 ### 2. Regression: Photometric Redshift Estimation
 

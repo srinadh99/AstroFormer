@@ -22,8 +22,12 @@ _ | Star-Galaxy-Quasar | 75.2 ± 0.1 | 77.9 ± 0.1 | 75.3 ± 0.1
 
 #### The confusion matrix for CLS random, channel, pixel tokenizations and the train loss plots are here (from top to bottom).
 
-| Plot 1 | Plot 2 | Plot 3 |
+| Experiment 1 | Experiment 2 | Experiment 3 |
 |---|---|---|
 | ![Plot 1](./MargFormer/Trained_Models/EX1_SG_ViTCLSPFCA_CM.png) | ![Plot 2](./MargFormer/Trained_Models/EX2_SG_ViTCLSPFCA_CM.png) | ![Plot 3](./MargFormer/Trained_Models/EX3_SG_ViTCLSPFCA_CM.png) |
+
+| Experiment 1 | Experiment 2 | Experiment 3 |
+|---|---|---|
+| ![Plot 1](./MargFormer/Trained_Models/EX1_SGQ_ViTCLSPFCA_CM.png) | ![Plot 2](./MargFormer/Trained_Models/EX2_SGQ_ViTCLSPFCA_CM.png) | ![Plot 3](./MargFormer/Trained_Models/EX3_SGQ_ViTCLSPFCA_CM.png) |
 
 2. Regression Galaxy Redshift Estimation using HSC Data

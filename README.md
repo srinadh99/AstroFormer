@@ -73,7 +73,7 @@ Table 1 summarizes the key classification metrics: Accuracy, Precision, and Reca
 
 ### Confusion Matrices
 
-To gain deeper insights into the specific classification performance for each class and identify common misclassification patterns, we present the confusion matrices for both the SG and SGQ tasks across the three experiments. The values shown are typically normalized by the true class count (recall) or represent raw counts [Clarify which one based on how plots were generated].
+To gain deeper insights into the specific classification performance for each class and identify common misclassification patterns, we present the confusion matrices for both the SG and SGQ tasks across the three experiments. The values shown are typically normalized by the true class count (recall) or represent raw counts.
 
 **Figure 1: Confusion Matrices for Star-Galaxy (SG) Classification**
 

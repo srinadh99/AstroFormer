@@ -14,7 +14,7 @@ AstroFormer provides a flexible framework adaptable to astronomical problems req
 *   **Challenge:** Classification becomes particularly difficult for faint and compact objects where traditional morphological or color-based methods often struggle. Point-like quasars can be mistaken for stars, and compact galaxies resemble point sources at large distances or faint magnitudes.
 *   **AstroFormer Approach (`MargFormer`):** By using photometry to query image features, the model can better disentangle subtle morphological differences or color-space overlaps that might confuse models relying solely on one data type or simple fusion. This is expected to improve accuracy and robustness, especially for the challenging faint/compact regimes critical for upcoming deep surveys like LSST and Euclid.
 
-### 2. Regression: Photometric Redshift Estimation
+### 2. Photometric Redshift Estimation
 
 *   **Goal:** Estimate the redshift (a proxy for distance) of celestial objects using only photometric data and associated images, bypassing the need for time-consuming spectroscopic observations. Accurate photo-z's are crucial for large-scale structure mapping, cosmological parameter estimation (e.g., Dark Energy equation of state), and galaxy evolution studies over cosmic time.
 *   **Challenge:** Achieving high precision (low scatter) and accuracy (low bias), and minimizing the rate of catastrophic outliers across a wide range of redshifts and object types, remains a significant challenge.
@@ -25,37 +25,69 @@ AstroFormer provides a flexible framework adaptable to astronomical problems req
 ### 1. `MargFormer`: Classification Model
 
 *   **Task:** Star-Galaxy-Quasar classification.
-*   **Description:** `MargFormer` is the specific implementation of the AstroFormer concept tailored for the SGQ classification task. It utilizes the cross-attention mechanism where photometric features query image patch embeddings.
+*   **Description:** `MargFormer` is the specific implementation of the AstroFormer concept tailored for the SG/SGQ classification tasks. It utilizes a cross-attention mechanism where photometric features (queries) probe image patch embeddings (keys/values), allowing for unified processing of both data types.
 *   **Dataset:** The model is developed and evaluated using data products from the **Sloan Digital Sky Survey (SDSS) Data Release 16 (DR16)** [1]. This includes:
     *   Derived photometric features (magnitudes, colors, etc.).
     *   Corresponding FITS images in u, g, r, i, z filters.
     *   Ground-truth spectroscopic classifications from the official SDSS pipeline.
-*   **Focus:** The evaluation specifically targets challenging populations of faint and compact objects, using selection criteria and experimental setups identical to those in Chaini et al. (2023) [2] to ensure direct comparability and demonstrate improvements in generalization.
+    *   Two specific datasets are generated based on the methodology in [2]:
+        *   **Compact source dataset:** Contains relatively brighter sources identified as compact based on criteria described in [2].
+        *   **Faint and Compact source dataset:** Contains sources that are both faint (average magnitude > 20) and compact.
+*   **Focus:** The evaluation specifically targets challenging populations of faint and compact objects.
+*   **Experimental Setup:** To rigorously evaluate performance and generalization, we replicate the three experimental scenarios defined in [2]:
+    *   **Experiment 1:**
+        *   **Training & Validation:** Compact source dataset.
+        *   **Testing:** Compact source dataset.
+        
+    *   **Experiment 2:**
+        *   **Training & Validation:** Faint and Compact source dataset.
+        *   **Testing:** Faint and Compact source dataset.
+        
+    *   **Experiment 3:**
+        *   **Training & Validation:** Compact source dataset.
+        *   **Testing:** Faint and Compact source dataset.
+        *   Critically assess the model's ability to generalize from the brighter compact training regime to the more challenging faint and compact testing regime, simulating real-world application scenarios.
+*   **Comparability:** Using identical datasets, selection criteria, and experimental setups as [2] ensures direct comparability of `MargFormer`'s performance against the baseline results established in that work (e.g., the MargNet model).
 *   **References:**
     *   [1] Ahumada, R., et al. (2020). *The 16th Data Release of the Sloan Digital Sky Surveys: First Release from the APOGEE-2 Southern Survey and Full Release of eBOSS Spectra*. ApJS, 249(1), 3. ([DOI: 10.3847/1538-4365/ab929e](https://doi.org/10.3847/1538-4365/ab929e))
     *   [2] Chaini, P., et al. (2023). *MargNet: A Machine Learning Framework for Photometric Classification of Faint Compact Sources in SDSS DR16*. MNRAS, 521(3), 3788–3799. ([DOI: 10.1093/mnras/stad719](https://doi.org/10.1093/mnras/stad719))
 
+## Results
 
-Experiment | Classification | Accuracy | Precision | Recall 
---- | --- | --- | --- | --- 
-Ex1 | Star-Galaxy | 98.1 ± 0.1 | 98.1 ± 0.1 | 98.1 ± 0.1
-_ | Star-Galaxy-Quasar | 93.2 ± 0.1 | 93.3 ± 0.1 | 93.2 ± 0.1
-Ex2 | Star-Galaxy | 97.1 ± 0.1 | 97.1 ± 0.1 | 97.1 ± 0.1
-_ | Star-Galaxy-Quasar | 86.7 ± 0.1 | 86.8 ± 0.1 | 86.7 ± 0.1
-Ex3 | Star-Galaxy | 92.7 ± 0.1 | 93.2 ± 0.1 | 92.7 ± 0.1
-_ | Star-Galaxy-Quasar | 75.2 ± 0.1 | 77.9 ± 0.1 | 75.3 ± 0.1
+The performance of the MargFormer model, utilizing photometric features as queries within its cross-attention mechanism, was rigorously evaluated on both Star-Galaxy (SG) and Star-Galaxy-Quasar (SGQ) classification tasks. We followed the three experimental setups defined in Section 2 [2] to assess performance under different data conditions and test generalization capabilities.
 
-### The confusion matrix for MargFormer with CLS desired using Photometric Features and alone is used as a query in the attention are presented for three different experiments.
-### For Star-Galaxy Classification.
+### Performance Metrics
 
-| Experiment 1 | Experiment 2 | Experiment 3 |
+Table 1 summarizes the key classification metrics: Accuracy, Precision, and Recall, averaged over 3 independent runs to estimate uncertainty.
+
+**Table 1: MargFormer Classification Performance Metrics**
+
+| Experiment | Classification Task | Accuracy (%) | Precision (%) | Recall (%) |
+|---|---|---|---|---|
+| **Ex1:** Compact Train/Test | Star-Galaxy (SG) | 98.1 ± 0.1 | 98.1 ± 0.1 | 98.1 ± 0.1 |
+| _ | Star-Galaxy-Quasar (SGQ) | 93.2 ± 0.1 | 93.3 ± 0.1 | 93.2 ± 0.1 |
+| **Ex2:** Faint+Compact Train/Test | Star-Galaxy (SG) | 97.1 ± 0.1 | 97.1 ± 0.1 | 97.1 ± 0.1 |
+| _ | Star-Galaxy-Quasar (SGQ) | 86.7 ± 0.1 | 86.8 ± 0.1 | 86.7 ± 0.1 |
+| **Ex3:** Compact Train, Faint+Compact Test | Star-Galaxy (SG) | 92.7 ± 0.1 | 93.2 ± 0.1 | 92.7 ± 0.1 |
+| _ | Star-Galaxy-Quasar (SGQ) | 75.2 ± 0.1 | 77.9 ± 0.1 | 75.3 ± 0.1 |
+
+### Confusion Matrices
+
+To gain deeper insights into the specific classification performance for each class and identify common misclassification patterns, we present the confusion matrices for both the SG and SGQ tasks across the three experiments. The values shown are typically normalized by the true class count (recall) or represent raw counts [Clarify which one based on how plots were generated].
+
+**Figure 1: Confusion Matrices for Star-Galaxy (SG) Classification**
+
+| Experiment 1 (Compact Train/Test) | Experiment 2 (Faint+Compact Train/Test) | Experiment 3 (Generalization Test) |
 |---|---|---|
-| ![Plot 1](./MargFormer/Trained_Models/EX1_SG_ViTCLSPFCA_CM.png) | ![Plot 2](./MargFormer/Trained_Models/EX2_SG_ViTCLSPFCA_CM.png) | ![Plot 3](./MargFormer/Trained_Models/EX3_SG_ViTCLSPFCA_CM.png) |
+| ![EX1 SG CM](./MargFormer/Trained_Models/EX1_SG_ViTCLSPFCA_CM.png) | ![EX2 SG CM](./MargFormer/Trained_Models/EX2_SG_ViTCLSPFCA_CM.png) | ![EX3 SG CM](./MargFormer/Trained_Models/EX3_SG_ViTCLSPFCA_CM.png) |
 
-### For Star-Galaxy-Quasar Classification.
+*Caption:* Confusion matrices for the binary Star-Galaxy classification task in Experiment 1 (left), Experiment 2 (center), and Experiment 3 (right). High diagonal values indicate correct classifications. Off-diagonal elements show misclassifications between stars and galaxies.
 
-| Experiment 1 | Experiment 2 | Experiment 3 |
+**Figure 2: Confusion Matrices for Star-Galaxy-Quasar (SGQ) Classification**
+
+| Experiment 1 (Compact Train/Test) | Experiment 2 (Faint+Compact Train/Test) | Experiment 3 (Generalization Test) |
 |---|---|---|
-| ![Plot 1](./MargFormer/Trained_Models/EX1_SGQ_ViTCLSPFCA_CM.png) | ![Plot 2](./MargFormer/Trained_Models/EX2_SGQ_ViTCLSPFCA_CM.png) | ![Plot 3](./MargFormer/Trained_Models/EX3_SGQ_ViTCLSPFCA_CM.png) |
+| ![EX1 SGQ CM](./MargFormer/Trained_Models/EX1_SGQ_ViTCLSPFCA_CM.png) | ![EX2 SGQ CM](./MargFormer/Trained_Models/EX2_SGQ_ViTCLSPFCA_CM.png) | ![EX3 SGQ CM](./MargFormer/Trained_Models/EX3_SGQ_ViTCLSPFCA_CM.png) |
 
-2. Regression Galaxy Redshift Estimation using HSC Data
+*Caption:* Confusion matrices for the three-class Star-Galaxy-Quasar classification task in Experiment 1 (left), Experiment 2 (center), and Experiment 3 (right). Observe the distribution of classifications across true and predicted classes, particularly the confusion between stars and quasars, and potentially compact galaxies.
+

@@ -20,4 +20,8 @@ _ | Star-Galaxy-Quasar | 86.7 ± 0.1 | 86.8 ± 0.1 | 86.7 ± 0.1
 Ex3 | Star-Galaxy | 92.7 ± 0.1 | 93.2 ± 0.1 | 92.7 ± 0.1
 _ | Star-Galaxy-Quasar | 75.2 ± 0.1 | 77.9 ± 0.1 | 75.3 ± 0.1
 
+#### The confusion matrix for CLS random, channel, pixel tokenizations and the train loss plots are here (from top to bottom).
+
+![plot](./MargFormer/Trained_Models/EX1_SG_ViTCLSPFCA_CM.png)
+
 2. Regression Galaxy Redshift Estimation using HSC Data

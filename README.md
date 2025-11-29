@@ -91,3 +91,24 @@ Confusion matrices for the binary Star-Galaxy classification task in Experiment 
 
 Confusion matrices for the three-class Star-Galaxy-Quasar classification task in Experiment 1 (left), Experiment 2 (center), and Experiment 3 (right). Observe the distribution of classifications across true and predicted classes, particularly the confusion between stars and quasars, and potentially compact galaxies.
 
+
+### Conformal Predictions
+
+To understand the model in detail, we present the conformal predictions using Mondrian Conformal Prediction (MCP) for both the SG and SGQ tasks across the three experiments. 
+
+**Figure 1: Confusion Matrices for Star-Galaxy (SG) Classification**
+
+| Experiment 1 (Compact Train/Test) | Experiment 2 (Faint+Compact Train/Test) | Experiment 3 (Generalization Test) |
+|---|---|---|
+| ![EX1 SG CP](./MargFormerCP/Trained_Models/Experiment3/SG/MargFormer/cp_plots_68/coverage_mondrian.png) | ![EX2 SG CM](./MargFormer/Trained_Models/EX2_SG_ViTCLSPFCA_CM.png) | ![EX3 SG CM](./MargFormer/Trained_Models/EX3_SG_ViTCLSPFCA_CM.png) |
+
+Confusion matrices for the binary Star-Galaxy classification task in Experiment 1 (left), Experiment 2 (center), and Experiment 3 (right). High diagonal values indicate correct classifications. Off-diagonal elements show misclassifications between stars and galaxies.
+
+**Figure 2: Confusion Matrices for Star-Galaxy-Quasar (SGQ) Classification**
+
+| Experiment 1 (Compact Train/Test) | Experiment 2 (Faint+Compact Train/Test) | Experiment 3 (Generalization Test) |
+|---|---|---|
+| ![EX1 SGQ CM](./MargFormer/Trained_Models/EX1_SGQ_ViTCLSPFCA_CM.png) | ![EX2 SGQ CM](./MargFormer/Trained_Models/EX2_SGQ_ViTCLSPFCA_CM.png) | ![EX3 SGQ CM](./MargFormer/Trained_Models/EX3_SGQ_ViTCLSPFCA_CM.png) |
+
+Confusion matrices for the three-class Star-Galaxy-Quasar classification task in Experiment 1 (left), Experiment 2 (center), and Experiment 3 (right). Observe the distribution of classifications across true and predicted classes, particularly the confusion between stars and quasars, and potentially compact galaxies.
+

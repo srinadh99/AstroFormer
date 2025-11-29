@@ -100,7 +100,7 @@ To understand the model in detail, we present the conformal predictions using Mo
 
 | Experiment 1 (Compact Train/Test) | Experiment 2 (Faint+Compact Train/Test) | Experiment 3 (Generalization Test) |
 |---|---|---|
-| ![EX1 SG CP](./MargFormerCP/Trained_Models/Experiment3/SG/MargFormer/cp_plots_68/coverage_mondrian.png) | ![EX2 SG CM](./MargFormer/Trained_Models/EX2_SG_ViTCLSPFCA_CM.png) | ![EX3 SG CM](./MargFormer/Trained_Models/EX3_SG_ViTCLSPFCA_CM.png) |
+| ![EX1 SG CP](./MargFormerCP/Trained_Models/Experiment3/SG/MargFormer/cp_plots_90/coverage_mondrian.png) | ![EX2 SG CM](./MargFormerCP/Trained_Models/Experiment3/SG/MargFormer/cp_plots_68/roc_mondrian.png) | ![EX3 SG CM](./MargFormerCP/Trained_Models/Experiment3/SG/MargFormer/cp_plots_68/coverage_vs_rmag.png) |
 
 Confusion matrices for the binary Star-Galaxy classification task in Experiment 1 (left), Experiment 2 (center), and Experiment 3 (right). High diagonal values indicate correct classifications. Off-diagonal elements show misclassifications between stars and galaxies.
 
